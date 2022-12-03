@@ -1,6 +1,9 @@
+from pathlib import Path
 import functions
 
-filename = 'example.txt'
+dir = Path(__file__).parent.resolve()
+
+filename = dir / "input.txt"
 
 
 def task1():
@@ -19,7 +22,7 @@ def task2():
     print("\tAnswer: ", answer)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("========== Task 1 ==========")
     task1()
     print("============================\n")

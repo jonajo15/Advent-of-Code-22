@@ -1,22 +1,25 @@
 from dataclasses import dataclass
 from typing import List
+from pathlib import Path
 
 import functions
 
-filename = 'input.txt'
+dir = Path(__file__).parent.resolve()
+filename = dir / "input.txt"
+
 
 @dataclass
-class Elf():
+class Elf:
     calories: int
 
-    def __init__(self, values:List[str]):
+    def __init__(self, values: List[str]):
         self.calories = sum([int(value) for value in values])
 
 
 def get_elves(_input: List[str]) -> List[Elf]:
     elves: List[Elf] = []
 
-    curr_values = []
+    curr_values: List[str] = []
     for value in _input:
         if value == "":
             elves.append(Elf(curr_values))
@@ -47,7 +50,7 @@ def task2():
     print("\tAnswer: ", calories)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("========== Task 1 ==========")
     task1()
     print("============================\n")

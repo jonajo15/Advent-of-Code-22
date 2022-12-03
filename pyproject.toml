@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "aoc-22"
+version = "0.1.0"
+description = ""
+authors = ["Jonatan Jönsson <jonatan.jonsson94@gmail.com>"]
+readme = "README.md"
+packages = [{include = "aoc_22"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pylint = "^2.15.7"
+black = "^22.10.0"
+mypy = "^0.991"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+
+[tool.pylint.'MESSAGES CONTROL']
+enable="useless-suppression"
+ignored-modules="pyspark.sql.functions"
+
+[tool.pylint.format]
+max-line-length = 88
+good-names="df"
+
+[tool.pylint.similarities]
+min-similarity-lines = 6
