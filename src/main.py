@@ -3,7 +3,7 @@ import functions
 
 dir = Path(__file__).parent.resolve()
 
-filename = dir / "input.txt"
+filename = dir / "example.txt"
 
 
 def task1():
