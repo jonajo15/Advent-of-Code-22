@@ -21,16 +21,8 @@ def find(lst, key, value, _default=None):
 
 
 def every(arr: List[int], compare: List[int]) -> bool:
-    for item in arr:
-        if item not in compare:
-            return False
-
-    return True
+    return next((False for item in arr if item not in compare), True)
 
 
 def any(arr: List[int], compare: List[int]) -> bool:
-    for item in arr:
-        if item in compare:
-            return True
-
-    return False
+    return next((True for item in arr if item in compare), False)
