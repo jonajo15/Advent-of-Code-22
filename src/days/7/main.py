@@ -114,7 +114,7 @@ def task2():
     unused = 70_000_000 - used
     diff = 30_000_000 - unused
 
-    answer = sorted([size for size in dir_sizes.values() if size >= diff]).pop(0)
+    answer = min([size for size in dir_sizes.values() if size >= diff])
 
     print("\tAnswer: ", answer)
 
